@@ -1,0 +1,57 @@
+ <div class="logdiv">
+    <h5>Log-in</h5>
+    <div >
+        <form #r="ngForm" (ngSubmit)="display(r)">
+            <div class="formDiv">
+                
+                <label>User Name</label>
+                <input type="text" name="usename" ngModel #uname="ngModel" required pattern="[a-z A-z]{8,}" minlength=8>
+                <div *ngIf="uname.touched && uname.invalid" class="error">
+                    <p>Invalid Name</p>
+                </div>
+
+                <label>Password</label>
+                <input type="password" name="password" ngModel #pwd="ngModel" required minlength=10>
+                <div *ngIf="pwd.touched && pwd.invalid">
+                    <p>Password should be atleast 10 Characters</p>
+                </div>
+                <button type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- <form class='form_1' name="form_1" ngModelGroup #pass="ngModelGroup">
+    <label for="role">Select Role</label>
+    <select id="role" name="role" required>
+        <option>Manager</option>
+        <option>Employee</option>
+    </select>
+    <label for="mail">Email</label>
+    <input ngModel type="email" id="mail" name="mail" placeholder="Enter your Email" required>
+    <p *ngIf="pass.touched&&pass.errors?.['required']">Email is Required</p>
+    <label for="pass">Password</label>
+    <input type="password" placeholder="Password Here" id="pass" name="password" required>
+    <button type="submit" (click)="display(pass)">Log-in</button>
+</form> -->

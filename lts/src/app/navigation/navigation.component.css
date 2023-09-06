@@ -1,0 +1,22 @@
+.title{
+    height: 80px;
+    width: auto;
+    background-color: rgb(70, 6, 70);
+    padding: 0px;
+}
+
+.navigation{
+    height:30px;
+    background-color: rgb(70, 6, 70);
+}
+
+p{
+    color: white;
+    text-align: center;
+    padding-top: 30px;
+    font-size: 30px;
+    font-family: Arial;
+}
+sup{
+    font-size: 15px;
+}
