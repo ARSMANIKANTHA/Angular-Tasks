@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+</head>
+<body>
+    <script>
+        localStorage.setItem("id","S180273");
+        console.log(localStorage.getItem("id"))
+        let val =document.getElementById("check");
+        if(localStorage.getItem(val)==null)
+        {
+            console.log("Not found");
+        }
+    </script>
+       
+    <form>
+        <input type="text" minlength=2 required placeholder="Enter your ID" id="check">
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>
