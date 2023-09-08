@@ -4,22 +4,15 @@
  <div class="logdiv">
     <h5>Log-in</h5>
     <div >
-        <form #r="ngForm" (ngSubmit)="login(r)"> 
+        <form #r="ngForm"> 
             <div class="formDiv">
                 
-                <label>User Name</label>
-                <input type="text" name="usename" ngModel #uname="ngModel" required pattern="[a-z A-z]{8,}" minlength=8>
-                <div *ngIf="uname.touched && uname.invalid" class="error">
-                    <p>Invalid Name</p>
-                </div>
-
+                <label>User Email</label>
+                <input type="text" name="email" ngModel #email="ngModel" required minlength=5>
                 <label>Password</label>
-                <input type="password" name="password" ngModel #pwd="ngModel" required minlength=10>
-                <div *ngIf="pwd.touched && pwd.invalid">
-                    <p>Password should be atleast 10 Characters</p>
-                </div>
-                <button type="submit" routerLink="/applyleave">Login</button>
-                <a routerLink="/register">Signup</a>
+                <input type="password" name="pwd" ngModel #pwd="ngModel" required minlength=1>
+                <button type="submit" [routerLink]="vals" (click)="login(r)">Login</button>
+                <a routerLink="/register">Sign-up</a>
             </div>
         </form>
     </div>

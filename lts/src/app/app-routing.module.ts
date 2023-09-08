@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
-import { RegistrationComponent } from './registration/registration.component';
-import { NavigationComponent } from './navigation/navigation.component';
-import { LoginComponent } from './login/login.component';
-import { EmployeeComponent } from './employee/employee.component';
 import { ApplyleaveComponent } from './applyleave/applyleave.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { LoginComponent } from './login/login.component';
+import { ManagerComponent } from './manager/manager.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { TrackleavesComponent } from './trackleaves/trackleaves.component';
 
 const routes: Routes = [
   {
@@ -23,6 +23,19 @@ const routes: Routes = [
   {
     path:'applyleave',
     component:ApplyleaveComponent
+  },
+  {
+    path:'login',
+    component:LoginComponent
+  }
+  ,
+  {
+    path:'trackleaves',
+    component:TrackleavesComponent
+  },
+  {
+    path:'manager',
+    component:ManagerComponent
   }
 ];
 

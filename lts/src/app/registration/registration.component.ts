@@ -17,14 +17,14 @@ export class RegistrationComponent implements OnInit {
     }
   }
   users:User[]=[];
-  user:User[]=[
+  user:User=
     {
       role:'',
       uname:'',
       email:'',
       pwd:''
     }
-  ];
+  ;
   register(val:any)
   {
     const vals = this.users.filter(user=>user.email===val.value.email);
@@ -35,7 +35,7 @@ export class RegistrationComponent implements OnInit {
       console.log(this.users);
     }
     else{
-      alert("user already exists");
+      alert("User already exists");
     }
   }
 

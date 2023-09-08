@@ -11,13 +11,10 @@
             <option>Casual Leave</option>
             <option>Others</option>
         </select>
-        <div *ngIf="reason.touched && reason.value=='Others'">
-            <input id="oinput" type="text" name="otherreason" placeholder="Enter Your reason Here" ngModel #oreason="ngModel">
-        </div>
         <label for="startdate">Start Date</label>
-        <input id="startdate "type="date" class="entry" name="startdate" ngModel #startd="ngModel">
+        <input id="startdate "type="datetime-local" class="entry" name="startdate" ngModel #startd="ngModel">
         <label for="enddate">End Date</label>
-        <input id="enddate" type="date" class="entry" name="enddate" ngModel #endD="ngModel">
+        <input id="enddate" type="datetime-local" class="entry" name="enddate" ngModel #endD="ngModel">
         <button class="entry">Apply</button >
         </form>
     </div>
