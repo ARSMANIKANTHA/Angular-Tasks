@@ -7,10 +7,10 @@
 
 .navigation{
     height:30px;
-    background-color: rgb(70, 6, 70);
+    background-color: lightcoral;
 }
 
-p{
+.hi{
     color: white;
     text-align: center;
     padding-top: 30px;
@@ -20,5 +20,3 @@ p{
 sup{
     font-size: 15px;
 }
-
-lts

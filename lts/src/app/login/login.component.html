@@ -1,7 +1,10 @@
+ <div class="mainnav">
+
+ </div>
  <div class="logdiv">
     <h5>Log-in</h5>
     <div >
-        <form #r="ngForm" (ngSubmit)="display(r)">
+        <form #r="ngForm" (ngSubmit)="login(r)"> 
             <div class="formDiv">
                 
                 <label>User Name</label>
@@ -15,43 +18,9 @@
                 <div *ngIf="pwd.touched && pwd.invalid">
                     <p>Password should be atleast 10 Characters</p>
                 </div>
-                <button type="submit">Login</button>
+                <button type="submit" routerLink="/applyleave">Login</button>
+                <a routerLink="/register">Signup</a>
             </div>
         </form>
     </div>
  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- <!-- <form class='form_1' name="form_1" ngModelGroup #pass="ngModelGroup">
-    <label for="role">Select Role</label>
-    <select id="role" name="role" required>
-        <option>Manager</option>
-        <option>Employee</option>
-    </select>
-    <label for="mail">Email</label>
-    <input ngModel type="email" id="mail" name="mail" placeholder="Enter your Email" required>
-    <p *ngIf="pass.touched&&pass.errors?.['required']">Email is Required</p>
-    <label for="pass">Password</label>
-    <input type="password" placeholder="Password Here" id="pass" name="password" required>
-    <button type="submit" (click)="display(pass)">Log-in</button>
-</form> -->

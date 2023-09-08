@@ -1,0 +1,19 @@
+.mainnav{
+    width: auto;
+    height: 30px;
+    margin-bottom: 0px;
+    background-color: rgb(70, 6, 70);
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.sub-mainnav{
+    margin-right: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}

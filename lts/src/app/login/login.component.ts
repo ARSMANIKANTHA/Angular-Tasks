@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../user';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -7,13 +8,19 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
 
   constructor() { }
-
+  userData:any;
   ngOnInit(): void {
+    this.userData=localStorage.getItem("users");
+    if(this.userData)
+    {
+      this.users=JSON.parse(this.userData);
+    }
   }
-  display(val:any)
+  users:User[]=[];
+  login(val:any)
   {
-    console.log(val);
+    
   }
 
-  
+
 }

@@ -5,11 +5,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { ApplyleaveComponent } from './applyleave/applyleave.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    NavigationComponent
+    NavigationComponent,
+    RegistrationComponent,
+    EmployeeComponent,
+    ApplyleaveComponent
   ],
   imports: [
     BrowserModule,
