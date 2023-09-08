@@ -1,5 +1,6 @@
 export interface Leaves {
-    type:String;
+    reason:String;
     start:String;
     end:String;
+    email:String;
 }

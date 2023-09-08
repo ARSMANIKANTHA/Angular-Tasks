@@ -18,6 +18,13 @@ export class LoginComponent implements OnInit {
   }
   vals="/login";
   users:User[]=[];
+  currentUser:User=
+  {
+    role:'',
+    uname:'',
+    email:'',
+    pwd:''
+  };
   login(val:any)
   {
     const len=this.users.filter(user=> user.email===val.value.email)
@@ -33,12 +40,15 @@ export class LoginComponent implements OnInit {
         alert("Invalid password");
       }
       else{
+        const len1=this.users.filter(cuser=> cuser.email===val.value.email)
+        this.currentUser=len1[0];
+        localStorage.setItem("currentUser",JSON.stringify(this.currentUser))
         if(val.value.role=="employee")
         {
           window.location.href='http://localhost:4200/employee'
         }
         else{
-          window.location.href='http://localhost:4200/manager'
+          window.location.href='http://localhost:4200/employee'
         }
       }
     }

@@ -31,8 +31,7 @@ export class RegistrationComponent implements OnInit {
     if(!vals.length)
     {
       this.users.push(val.value);
-      localStorage.setItem("users",JSON.stringify(this.users));
-      console.log(this.users);
+      localStorage.setItem("users",JSON.stringify(this.users)); 
     }
     else{
       alert("User already exists");
