@@ -9,15 +9,23 @@ export class LoginComponent implements OnInit {
 
   constructor() { }
   userData:any;
+  num:Number=-1;
   ngOnInit(): void {
     this.userData=localStorage.getItem("users");
     if(this.userData)
     {
       this.users=JSON.parse(this.userData);
     }
+    this.users.forEach(t=>{
+      if(t["role"]=="Employee")
+      {
+        this.emp.unshift(t["email"]);
+      }
+    })
   }
   vals="/login";
   users:User[]=[];
+  emp:String[]=[];
   currentUser:User=
   {
     role:'',
@@ -28,8 +36,6 @@ export class LoginComponent implements OnInit {
   login(val:any)
   {
     const len=this.users.filter(user=> user.email===val.value.email)
-    console.log(val)
-    console.log(len)
     if(len.length==0)
     {
       alert("Email Not Found")
@@ -41,14 +47,19 @@ export class LoginComponent implements OnInit {
       }
       else{
         const len1=this.users.filter(cuser=> cuser.email===val.value.email)
+        console.log(len1);
         this.currentUser=len1[0];
         localStorage.setItem("currentUser",JSON.stringify(this.currentUser))
-        if(val.value.role=="employee")
+        console.log(this.emp);
+        this.num=this.emp.indexOf(val.value.email);
+        if(this.num!=-1)
         {
-          window.location.href='http://localhost:4200/employee'
+          this.vals="/employeee"
+          // window.location.href='http://localhost:4200/employeee'
         }
         else{
-          window.location.href='http://localhost:4200/employee'
+          // window.location.href='http://localhost:4200/manager'
+          this.vals="/manager"
         }
       }
     }

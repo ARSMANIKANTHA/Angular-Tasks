@@ -1,0 +1,29 @@
+<div class="mainnav">
+    <div class="sub-mainnav">
+        <p class="para" routerLink="/newrequests">New Requests</p>
+        <p class="para" routerLink="/overview">Overview</p>
+    </div>
+    <div class="sub-mainnav">
+        <p class="para">UserName</p>
+    </div>
+ </div>
+<div class="requestdiv">
+    <table>
+        <tr>
+            <th>Employee Name</th>
+            <th>Leave Type</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Action</th>
+            <th>Status</th>
+        </tr>
+        <tr *ngFor="let leave1 of leaveData">
+            <td>{{leave1.email}}</td>
+            <td>{{leave1.reason}}</td>
+            <td>{{leave1.startdate}}</td>
+            <td>{{leave1.enddate}}</td>
+            <td>Hii</td>
+            <td>{{leave1.status}}</td>
+        </tr>
+    </table>
+</div>

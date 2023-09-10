@@ -11,7 +11,15 @@ export class ApplyleaveComponent implements OnInit {
   constructor() { }
   leavesData:any;
   userData:any;
+  username:any;
+  leavesd:Leaves[]=[];
+  dleaves:any;
   ngOnInit(): void {
+      if(!(localStorage.getItem("leaves")))
+      {
+          this.dleaves=JSON.stringify(this.leavesd);
+          localStorage.setItem("leaves",this.dleaves);
+      } 
       this.leavesData=localStorage.getItem("leaves");
       this.userData=localStorage.getItem("currentUser");
       if(this.leaves)
@@ -21,6 +29,7 @@ export class ApplyleaveComponent implements OnInit {
       if(this.cuser)
       {
         this.cuser=JSON.parse(this.userData);
+        this.username=this.cuser["uname"];
       }
   }
   cuser:User={
@@ -31,9 +40,11 @@ export class ApplyleaveComponent implements OnInit {
   }
   cleave:Leaves={
       reason:'',
-      start:'',
-      end:'',
-      email:''
+      startdate:'',
+      enddate:'',
+      email:'',
+      status:'',
+      comments:''
   }
   
   leaves:Leaves[]=[];
@@ -42,9 +53,9 @@ export class ApplyleaveComponent implements OnInit {
     //Adding current user details to the current leave 
       this.cleave=details.value;
       this.cleave["email"]=this.cuser["email"];
-      console.log(this.leaves);
+      this.cleave['status']="Pending";
+      this.cleave['comments']='No Comments';
       this.leaves.push(this.cleave);
-      console.log(this.leaves)
       localStorage.setItem("leaves",JSON.stringify(this.leaves))
   }
 

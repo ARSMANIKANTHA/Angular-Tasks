@@ -1,6 +1,6 @@
 export interface User {
-    role:String;
-    uname:String;
-    email:String;
-    pwd:String;
+    role:string;
+    uname:string;
+    email:string;
+    pwd:string;
 }

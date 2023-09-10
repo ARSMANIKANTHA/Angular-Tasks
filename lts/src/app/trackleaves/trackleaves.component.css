@@ -1,16 +1,76 @@
 .maintrack{
     height:auto;
     min-height: 30px;
-    width: 600px;
-    margin:30px 300px 0px 300px;
+    width: 700px;
+    margin:auto;
+    margin-top:50px;
     background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center ;
+    padding:15px
+}
+.Logout{
+    background-color:rgb(70, 6, 70);
+    color: white;
+    border: none;
+    width: 100px;
+}
+h5{
+    border-color: 1px solid black;
 }
 table{
-    width: 600px;
+    margin-top: 10px;
+    width: auto;
+    border-collapse: collapse;
 }
-tr{
+
+tr,td{
+    border: 1px solid black;
+    border-width: 1px;
+    padding: 12px;
+}
+
+tr:nth-child(even)
+{
+    background-color: whitesmoke;
+}
+tr:nth-child(odd)
+{
+    background-color: wheat;
+}
+th{
+    background-color: rgb(70, 6, 100);
+    color: white;
+    border: 1px solid black;
+    border-width: 1px;
+    padding: 12px;  
+}
+
+.edit{
+    height: 20px;
+    width:20px;
+    background-image: url("C:\Users\A.R.S.MANI KANTHA\Desktop\EDTEX2\edtex_task3\lts\src\assets\edit3.svg");
+    color: white;
+    border: 2px;
+    cursor: pointer;
+}
+.delete{
+    margin-left: 10px;
+    height: 20px;
+    width:18px;
+    background-image: url("C:\Users\A.R.S.MANI KANTHA\Desktop\EDTEX2\edtex_task3\lts\src\assets\trash.svg");
+    color: white;
+    border: 2px;
+    cursor: pointer;
+}
+
+.actiondiv{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    align-items: flex-start;
+    justify-content: space-around;
+    align-items: center;
+    border: none;
 }

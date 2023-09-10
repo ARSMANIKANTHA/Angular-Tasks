@@ -1,0 +1,29 @@
+.requestdiv{
+    height:auto;
+    width:auto;
+    background-color: white;
+    margin:20px 300px 0px 300px;
+    display: inline-flex;
+}
+
+table{
+    padding: 10px;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th,td{
+    padding: 8px 23px 8px 23px;
+    border: 1px solid black;
+}
+
+.action{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: first baseline;
+}
+
+button{
+    margin-right: 5px;
+}

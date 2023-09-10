@@ -1,6 +1,12 @@
 <div class="mainnav">
-    
- </div>
+    <div class="sub-mainnav">
+        <p class="para" routerLink="/applyleave">Apply</p>
+        <p class="para" routerLink="/trackleaves">Track</p>
+    </div>
+    <div class="sub-mainnav">
+        <p class="para">{{username}}</p>
+    </div>
+</div>
 <div class="firstdiv"> 
     <h4>Apply Leave</h4>
     <div class="maindiv">
@@ -8,8 +14,8 @@
         <label for="reason">Leave Type</label>
         <select id="reason" class="entry" name="reason" ngModel #reason="ngModel">
             <option>Sick Leave</option>
-            <option>Casual Leave</option>
-            <option>Others</option>
+            <option>Vacation</option>
+            <option>Personal</option>
         </select>
         <label for="startdate">Start Date</label>
         <input id="startdate "type="datetime-local" class="entry" name="startdate" ngModel #startd="ngModel">

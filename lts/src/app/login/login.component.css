@@ -1,56 +1,68 @@
-
 .logdiv{
-    height:400px;
-    width: 330px;
+    height: auto;
+    width: 500px;
     background-color: white;
-    position:absolute;
-    top:20%;
-    left: 35%;
-    right: 35%;
-    bottom: 20%;
-    padding: 10px;
-    border-radius: 6px;
-    margin-top: 40px;
-}
-h5{
-    text-align: center;
-    font-size: 20px;
-}
-.formDiv{
-    /* border: 1px solid black; */
-    margin-top: 10px;
-    padding: 15px;
-    margin-left: 30px;
-    height:auto;
-    width: 250px;
+    margin: auto;
+    min-height: 300px;
+    height: auto;
+    min-width: 400px;
+    max-width: 00px;
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
-    align-items: flex-start;
-}
-
-input{
-    width: 250px;
-    height: 20px;
-    margin-bottom: 3px;
-}
-
-button{
-    width: 90px;
-    height: 30px;
-    background-color: blue;
-    color:white;
-    border: none;
-}
-.error{
-    font-size: 15px;
-    font-style: italic;
-    color: red;
+    justify-content: space-between;    
+    padding: 0px 20px 20px 20px;
+    /* background-color: yellow; */
+    border-radius: 10px;
 }
 
 .mainnav{
-    width: auto;
-    height: 30px;
-    margin-bottom: 10px;
-    background-color: rgb(70, 6, 70);
+    margin-bottom: 40px;
 }
+
+.headdiv{
+    text-align: center;
+    font-size: 22px;
+    height: 30px;
+    margin-top: 20px;
+    border-bottom: 1px solid wheat;
+}
+.bodydiv{
+    height: 80%;
+}
+
+.formdiv{
+    /* background-color: green; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 5px;
+    padding:20px 30px 20px;
+    min-height: 180px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+input{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    width: 300px;
+    height: 27px;
+    border: 0.1px solid black;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+button{
+    margin-top: 9px;
+    width: 308px;
+    height: 35px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+

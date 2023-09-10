@@ -5,16 +5,16 @@
     <p>Registration</p>
     <form id="mainreg" #mainf="ngForm" (ngSubmit)="register(mainf)">
         <label for="role">Role:</label>
-        <select id="role" name="role" ngModel #urole="ngModel">
+        <select id="role" name="role" ngModel #urole="ngModel" value="Choose Role">
             <option>Manager</option>
             <option>Employee</option>
         </select>
         <label for="unmae">Name:</label>
-        <input type="text" minlength=8 name="uname"placeholder="Enter your Name" required ngModel #name="ngModel" >
+        <input type="text" minlength=8 name="uname"placeholder="Your Name" required ngModel #name="ngModel" >
         <label for="email">Email:</label>
-        <input type="email" name="email" placeholder="email" required minlength=15 ngModel #email="ngModel">
+        <input type="email" name="email" placeholder="Your Email" required minlength=15 ngModel #email="ngModel">
         <label for="pwd">Password:</label>
-        <input type="password" placeholder="enter password here" name="pwd" minlength=8 required ngModel #pass="ngModel">
+        <input type="password" placeholder="Your Password" name="pwd" minlength=8 required ngModel #pass="ngModel">
         <div class="btn">
             <button type="submit">Register</button>
         </div>

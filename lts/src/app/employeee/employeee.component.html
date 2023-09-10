@@ -1,0 +1,29 @@
+<div class="mainnav">
+    <div class="sub-mainnav">
+        <p class="para" routerLink="/applyleave">Apply</p>
+        <p class="para" routerLink="/trackleaves">Track</p>
+    </div>
+    <div class="sub-mainnav">
+        <p class="para">{{username}}</p>
+    </div>
+</div>
+
+
+<div class="maintrack">
+    <table>
+        <tr>
+            <th>Type</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Status</th>
+            <th>Comments</th>
+        </tr>
+        <tr *ngFor="let leave of cleaves">
+            <td>{{leave.reason}}</td>
+            <td>{{leave.startdate}}</td>
+            <td>{{leave.enddate}}</td>
+            <td>{{leave.status}}</td>
+            <td>{{leave.comments}}</td>
+        </tr>
+    </table>
+</div>

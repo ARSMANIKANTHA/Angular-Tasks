@@ -1,0 +1,45 @@
+.maintrack{
+    height:auto;
+    min-height: 30px;
+    width: 700px;
+    margin:auto;
+    margin-top:50px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center ;
+    padding:15px
+}
+
+h5{
+    border-color: 1px solid black;
+}
+table{
+    margin-top: 10px;
+    width: auto;
+    border-collapse: collapse;
+}
+
+tr,td{
+    border: 1px solid black;
+    border-width: 1px;
+    padding: 12px;
+}
+
+tr:nth-child(even)
+{
+    background-color: whitesmoke;
+}
+tr:nth-child(odd)
+{
+    background-color: wheat;
+}
+th{
+    background-color: rgb(70, 6, 100);
+    color: white;
+    border: 1px solid black;
+    border-width: 1px; 
+    padding:12px;
+}

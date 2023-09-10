@@ -1,4 +1,14 @@
+<div class="mainnav">
+    <div class="sub-mainnav">
+        <p class="para" routerLink="/applyleave">Apply</p>
+        <p class="para" routerLink="/trackleaves">Track</p>
+    </div>
+    <div class="sub-mainnav">
+        <p>{{username | uppercase}}</p>
+    </div>
+</div>
 <div class="maintrack">
+    <h4>Registered Leaves</h4>
     <table>
         <tr>
             <th>Leave Type</th>
@@ -6,13 +16,17 @@
             <th>End Date</th>
             <th>Status</th>
             <th>Actions</th>
+            <th>Comments</th>
         </tr>
+        <div *ngIf="indicator==0">No leaves Registered</div>
         <tr *ngFor="let oneleave of cleaves">
             <td>{{oneleave.reason}}</td>
-            <td>{{oneleave.start}}</td>
-            <td>{{oneleave.end}}</td>
-            <td>stat</td>
-            <td>action</td>
+            <td>{{oneleave.startdate | date:'medium'}}</td>
+            <td>{{oneleave.enddate | date:'medium'}}</td>
+            <td>{{oneleave.status}}</td>
+            <td class="actiondiv"><button title="Edit"class="edit" (click)="edit(oneleave)"></button><button title="Delete" class="delete" (click)="del(oneleave)"></button></td>
+            <td>{{oneleave.comments}}</td>
         </tr>
     </table>
+    
 </div> 
