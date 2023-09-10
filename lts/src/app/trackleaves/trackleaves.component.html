@@ -18,11 +18,10 @@
             <th>Actions</th>
             <th>Comments</th>
         </tr>
-        <div *ngIf="indicator==0">No leaves Registered</div>
         <tr *ngFor="let oneleave of cleaves">
             <td>{{oneleave.reason}}</td>
-            <td>{{oneleave.startdate | date:'medium'}}</td>
-            <td>{{oneleave.enddate | date:'medium'}}</td>
+            <td class="Dates">{{oneleave.startdate | date:'medium'}}</td>
+            <td class="Dates">{{oneleave.enddate | date:'medium'}}</td>
             <td>{{oneleave.status}}</td>
             <td class="actiondiv"><button title="Edit"class="edit" (click)="edit(oneleave)"></button><button title="Delete" class="delete" (click)="del(oneleave)"></button></td>
             <td>{{oneleave.comments}}</td>

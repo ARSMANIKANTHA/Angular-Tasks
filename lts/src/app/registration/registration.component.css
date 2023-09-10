@@ -1,5 +1,6 @@
 #mainreg{
-    height:320px;
+    min-height: 400px;
+    height:auto;
     width: 300px;
     border-radius: 10px;   
     margin: auto; 
@@ -12,13 +13,13 @@
 } 
 
 .maindiv{
-    height: 400px;
+    min-height: 400px;
+    max-height: auto;
     width: 400px;
     background-color: white;
     margin: auto;
     border-radius: 10px;
     font-size: 20px;
-
 }
 
 p{
@@ -58,4 +59,9 @@ button{
     height: 30px;
     margin-bottom: 10px;
     background-color: rgb(70, 6, 70);
+}
+
+.pat{
+    font-size: 15px;
+    color: red;
 }

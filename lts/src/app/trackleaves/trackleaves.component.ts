@@ -18,7 +18,7 @@ export class TrackleavesComponent implements OnInit {
   leaves:Leaves[]=[];
   cleaves:Leaves[]=[
   ];
-  indicator:any;
+  indicator:Number=0;
   ngOnInit(): void {
     this.userData=localStorage.getItem("currentUser");
     this.leaveData=localStorage.getItem("leaves");
@@ -43,7 +43,10 @@ export class TrackleavesComponent implements OnInit {
         if(temp["reason"]==val["reason"] &&  temp["email"]==val["email"])
         {
         this.c=prompt("Enter a reason:");
-        temp["reason"]=this.c;
+        if(this.c!='')
+        {
+          temp["reason"]=this.c;
+        }
         }
       })
       this.tempL=JSON.stringify(this.leaves);

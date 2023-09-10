@@ -27,6 +27,7 @@ export class RegistrationComponent implements OnInit {
   ;
   register(val:any)
   {
+    console.log(val);
     const vals = this.users.filter(user=>user.email===val.value.email);
     if(!vals.length)
     {

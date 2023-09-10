@@ -4,27 +4,28 @@
         <p class="para" routerLink="/overview">Overview</p>
     </div>
     <div class="sub-mainnav">
-        <p class="para">UserName</p>
+        <p class="para">{{UserName}}</p>
     </div>
  </div> 
-<div class="requestdiv">
-    <table class="maintrack">
+<div class="maintrack">
+    <h5>New Requests</h5>
+    <table>
         <tr>
-            <th>Employee Name</th>
+            <th>Employee Email</th>
             <th>Leave Type</th>
             <th>Start Date</th>
             <th>End Date</th>
             <th>Action</th>
             <th>Status</th>
-        </tr>
+        </tr> 
         <tr *ngFor="let leave of cleaves">
             <td>{{leave.email}}</td>
             <td>{{leave.reason}}</td>
-            <td>{{leave.startdate}}</td>
-            <td>{{leave.enddate}}</td>
+            <td>{{leave.startdate |date}}</td>
+            <td>{{leave.enddate |date}}</td>
             <td><div class="action"><button (click)="accept(leave)">Accept</button><button  (click)="reject(leave)">Reject</button></div></td>
             <td>{{leave.status}}</td>
-            <td>{{leave.comments}}</td>
+            <!-- <td>{{leave.comments}}</td> -->
         </tr>
     </table>
 </div>

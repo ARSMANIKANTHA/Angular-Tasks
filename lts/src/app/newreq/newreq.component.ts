@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Leaves } from '../leaves';
+import { User } from '../user';
 @Component({
   selector: 'app-newreq',
   templateUrl: './newreq.component.html',
@@ -7,6 +8,14 @@ import { Leaves } from '../leaves';
 })
 export class NewreqComponent implements OnInit {
   constructor() { }
+  UserName:any;
+  cuser:User={
+    role: '',
+    uname: '',
+    email: '',
+    pwd: ''
+  };
+  userData:any;
   ngOnInit(): void {
     this.leaveData=localStorage.getItem("leaves");
     if(this.leaveData)
@@ -20,6 +29,14 @@ export class NewreqComponent implements OnInit {
       }
     })
     this.leaveData=JSON.stringify(this.leaveData);
+
+    //for finding current user
+    this.userData=localStorage.getItem("currentUser");
+    if(this.userData)
+    {
+      this.cuser=JSON.parse(this.userData);
+    }
+    this.UserName=this.cuser['uname'];
   }
   cleaves:Leaves[]=[];
   leaveData:any;

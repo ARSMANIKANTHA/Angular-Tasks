@@ -7,22 +7,21 @@
         <p class="para">UserName</p>
     </div>
  </div>
-<div class="requestdiv">
+<div class="maintrack">
+    <h5>Leaves Overview</h5>
     <table>
         <tr>
-            <th>Employee Name</th>
+            <th>Employee Email</th>
             <th>Leave Type</th>
             <th>Start Date</th>
             <th>End Date</th>
-            <th>Action</th>
             <th>Status</th>
         </tr>
         <tr *ngFor="let leave1 of leaveData">
             <td>{{leave1.email}}</td>
             <td>{{leave1.reason}}</td>
-            <td>{{leave1.startdate}}</td>
-            <td>{{leave1.enddate}}</td>
-            <td>Hii</td>
+            <td>{{leave1.startdate | date}}</td>
+            <td>{{leave1.enddate | date}}</td>
             <td>{{leave1.status}}</td>
         </tr>
     </table>
