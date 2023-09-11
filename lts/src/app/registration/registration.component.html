@@ -10,15 +10,16 @@
             <option>Employee</option>
         </select>
         <label for="unmae">Name:</label>
-        <input type="text" name="uname"placeholder="Your Name" required ngModel #name="ngModel" pattern="[A-Z a-z]">
-        <p class="pat" *ngIf="name.touched && name.errors?.['pattern']">Name Dont include Numbers</p>
+        <input type="text" name="uname"placeholder="Your Name" required ngModel #name="ngModel" pattern="[A-Z a-z]+" required>
+        <p class="pat" *ngIf="name.touched && name.errors?.['pattern']">Names Don't include  special characters &  Numbers</p>
         <label for="email">Email:</label>
-        <input type="email" pattern="[a-z A-Z 0-9]+@[a-z]+.[a-z]{1,}" name="email" placeholder="Your Email" required minlength=15 ngModel #email="ngModel">
+        <input type="email" pattern="[a-z A-Z 0-9]+@[a-z]+.[a-z]{1,}" name="email" placeholder="Your Email" required minlength=15 ngModel #email="ngModel" required>
         <p class="pat" *ngIf="email.touched && email.errors?.['pattern']">Invalid Email format</p>
         <label for="pwd">Password:</label>
         <input type="password" placeholder="Your Password" name="pwd" minlength=8 pattern="[A-Z a-z 0-9]+" required ngModel #pass="ngModel">
         <p class="pat" *ngIf="pass.touched && pass.errors?.['pattern']">Special characters and symbols are not allowed</p>
         <p class="pat" *ngIf="pass.touched && pass.errors?.['minlength']">Password must be minimum of 8 Characters</p>
+        <p *ngIf="mainf.touched && mainf.errors">Invalid Details</p>
         <div class="btn">
             <button type="submit">Register</button>
         </div>
