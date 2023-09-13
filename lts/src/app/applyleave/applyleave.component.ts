@@ -8,6 +8,15 @@ import { User } from '../user';
 })
 export class ApplyleaveComponent implements OnInit {
 
+  chosenMod:String="";
+  logout()
+  {
+    switch(this.chosenMod)
+    {
+      case "mod2": window.location.href="http://localhost:4200/login";
+                   localStorage.removeItem("currentUser");
+    }
+  }
   constructor() { }
   leavesData:any;
   userData:any;
@@ -48,15 +57,38 @@ export class ApplyleaveComponent implements OnInit {
   }
   
   leaves:Leaves[]=[];
-  leavedetails(details:any)
+  leavedetails(details:any,startdate:any,enddate:any,reason:any)
   {
-    //Adding current user details to the current leave 
-      this.cleave=details.value;
-      this.cleave["email"]=this.cuser["email"];
-      this.cleave['status']="Pending";
-      this.cleave['comments']='No Comments';
-      this.leaves.push(this.cleave);
-      localStorage.setItem("leaves",JSON.stringify(this.leaves))
+      const sdate= new Date(startdate.value);
+      const edate = new Date(enddate.value);
+      const cdate = new Date();
+      
+      if(startdate.errors?.['required'] || enddate.errors?.['required'] || reason.errors?.['required'])
+      {
+        alert("Invalid Details");
+      }
+      else{
+      
+        if(cdate>sdate || cdate>edate)
+        {
+          alert("You can't apply with Previous Days");
+        }
+          else{
+                if(sdate>edate || sdate.getTime()==edate.getTime())
+                {
+                  alert("Choose correct start and end dates");
+                }
+                else{
+                  this.cleave=details.value;
+                  this.cleave["email"]=this.cuser["email"];
+                  this.cleave['status']="Pending";
+                  this.cleave['comments']='No Comments';
+                  this.leaves.push(this.cleave);
+                  localStorage.setItem("leaves",JSON.stringify(this.leaves))
+                  alert("Leave applied Successfully!!")
+                }
+          }
+      }
   }
 
 }

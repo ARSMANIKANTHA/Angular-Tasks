@@ -11,6 +11,7 @@ export class RegistrationComponent implements OnInit {
   userData:any;
   disable:any;
   ngOnInit(): void {
+    //Getting all availble users from localstorage 
     this.userData = localStorage.getItem("users");
     if(this.userData)
     {
@@ -26,24 +27,26 @@ export class RegistrationComponent implements OnInit {
       pwd:''
     }
   ;
-  register(val:any)
+  register(val:any,name:any,email:any,pass:any)
   {
-    console.log(val);
-    const vals = this.users.filter(user=>user.email===val.value.email);
-    if(val.valid===true)
+    const vals = this.users.filter(user=>user.email===val.value.email);    
+    if(pass.errors?.['minlength'] || name.errors?.['pattern'] || email.errors?.['pattern'])
     {
-      alert("Invalid Details Provided");
+      alert("Invalid Format");
     }
     else{
-    if(!vals.length)
-    {
-      this.users.push(val.value);
-      localStorage.setItem("users",JSON.stringify(this.users)); 
-      // window.location.href='http://localhost:4200/login'
+      if(!vals.length)
+      {
+        alert("Registration Successful!!");
+        window.location.href="http://localhost:4200/login"
+        this.users.push(val.value);
+        localStorage.setItem("users",JSON.stringify(this.users)); 
+      }
+      //Checking whether the user already presents or not
+      else{
+        alert("User already exists");
+      }
     }
-    else{
-      alert("User already exists");
-    }}
-  }
-
+    }
+    
 }

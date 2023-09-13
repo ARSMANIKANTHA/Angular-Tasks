@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Leaves } from '../leaves';
 @Component({
   selector: 'app-overview',
   templateUrl: './overview.component.html',
@@ -14,6 +13,15 @@ export class OverviewComponent implements OnInit {
     if(this.leaveData)
     {
       this.leaveData=JSON.parse(this.leaveData);
+    }
+  }
+  chosenMod:String="";
+  logout()
+  {
+    switch(this.chosenMod)
+    {
+      case "mod2": window.location.href="http://localhost:4200/login";
+                   localStorage.removeItem("currentUser");
     }
   }
   

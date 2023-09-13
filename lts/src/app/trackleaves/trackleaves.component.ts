@@ -16,8 +16,7 @@ export class TrackleavesComponent implements OnInit {
   //Dummy instances of user and leaves
   cuser:User={role:'',uname:'',email:'',pwd:""};
   leaves:Leaves[]=[];
-  cleaves:Leaves[]=[
-  ];
+  cleaves:Leaves[]=[];
   indicator:Number=0;
   ngOnInit(): void {
     this.userData=localStorage.getItem("currentUser");
@@ -52,7 +51,6 @@ export class TrackleavesComponent implements OnInit {
       this.tempL=JSON.stringify(this.leaves);
       localStorage.setItem("leaves",this.tempL);
   }
-
   del(val:any)
   { 
     this.leaves.forEach(temp=>
@@ -65,5 +63,14 @@ export class TrackleavesComponent implements OnInit {
       })
       this.tempL=JSON.stringify(this.leaves);
       localStorage.setItem("leaves",this.tempL);
+  }
+  chosenMod:String="";
+  logout()
+  {
+    switch(this.chosenMod)
+    {
+      case "mod2": window.location.href="http://localhost:4200/login";
+                   localStorage.removeItem("currentUser");
+    }
   }
 }

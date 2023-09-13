@@ -4,8 +4,10 @@
         <p class="para" routerLink="/overview">Overview</p>
     </div>
     <div class="sub-mainnav">
-        <p class="para">UserName</p>
-    </div>
+<select class="logout" [(ngModel)]="chosenMod" (ngModelChange)="logout()">
+            <option value="mod1" selected disabled>username</option>
+            <option value="mod2">Logout</option>
+        </select>    </div>
  </div>
 <div class="maintrack">
     <h5>Leaves Overview</h5>

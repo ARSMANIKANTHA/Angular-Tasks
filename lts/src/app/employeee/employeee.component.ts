@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../user';
 import { Leaves } from '../leaves';
+import { User } from '../user';
 @Component({
   selector: 'app-employeee',
   templateUrl: './employeee.component.html',
@@ -32,20 +32,36 @@ export class EmployeeeComponent implements OnInit {
   leaveData:any;
   cuser:User={role:'',uname:'',email:'',pwd:""};
   leaves:Leaves[]=[];
+  value:any;
   cleaves:Leaves[]=[
   ];
+
+  chosenMod:String="";
+  logout()
+  {
+    switch(this.chosenMod)
+    {
+      case "mod2": window.location.href="http://localhost:4200/login";
+                   localStorage.removeItem("currentUser");
+    }
+  } 
+  tleaves=true;
   ngOnInit(): void {
     this.userData=localStorage.getItem("currentUser");
     this.leaveData=localStorage.getItem("leaves");
     if(this.userData)
     {
+      //parsing user data into cuser data
         this.cuser=JSON.parse(this.userData);
         this.username=this.cuser["uname"];
     }
     if(this.leaveData)
     {
       this.leaves=JSON.parse(this.leaveData);
+      this.tleaves=false;
     }
     this.cleaves=this.leaves.filter(leaven => leaven["email"]===this.cuser["email"]) 
   }
+
+  
 }

@@ -4,23 +4,26 @@
         <p class="para" routerLink="/trackleaves">Track</p>
     </div>
     <div class="sub-mainnav">
-        <p class="para">{{username}}</p>
+        <select class="logout" [(ngModel)]="chosenMod" (ngModelChange)="logout()">
+            <option disabled selected hidden>{{username}}</option>
+            <option value="mod2">Logout</option>
+        </select>
     </div>
 </div>
 <div class="firstdiv"> 
     <h4>Apply Leave</h4>
     <div class="maindiv">
-        <form #Lform="ngForm" (ngSubmit)="leavedetails(Lform)">
+        <form #Lform="ngForm" (ngSubmit)="leavedetails(Lform,startd,endD,reason)">
         <label for="reason">Leave Type</label>
-        <select id="reason" class="entry" name="reason" ngModel #reason="ngModel">
+        <select class="select" id="reason" class="entry" name="reason" ngModel #reason="ngModel" required>
             <option>Sick Leave</option>
             <option>Vacation</option>
             <option>Personal</option>
         </select>
         <label for="startdate">Start Date</label>
-        <input id="startdate "type="datetime-local" class="entry" name="startdate" ngModel #startd="ngModel">
+        <input id="startdate "type="datetime-local" class="entry" name="startdate" ngModel #startd="ngModel" required>
         <label for="enddate">End Date</label>
-        <input id="enddate" type="datetime-local" class="entry" name="enddate" ngModel #endD="ngModel">
+        <input id="enddate" type="datetime-local" class="entry" name="enddate" ngModel #endD="ngModel" required>
         <button class="entry">Apply</button >
         </form>
     </div>

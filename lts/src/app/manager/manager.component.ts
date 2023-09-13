@@ -7,6 +7,15 @@ import { User } from '../user';
 })
 export class ManagerComponent implements OnInit {
 
+  chosenMod:String="";
+  logout()
+  {
+    switch(this.chosenMod)
+    {
+      case "mod2": window.location.href="http://localhost:4200/login";
+                   localStorage.removeItem("currentUser");
+    }
+  }
   constructor() { }
   UserName:any;
   ngOnInit(): void {

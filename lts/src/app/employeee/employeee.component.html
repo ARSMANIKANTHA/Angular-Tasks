@@ -4,13 +4,15 @@
         <p class="para" routerLink="/trackleaves">Track</p>
     </div>
     <div class="sub-mainnav">
-        <p class="para">{{username}}</p>
+        <select class="logout" [(ngModel)]="chosenMod" (ngModelChange)="logout()">
+            <option selected>{{username}}</option>
+            <option value="mod2">Logout</option>
+        </select>
     </div>
 </div>
-
-
 <div class="maintrack">
     <table>
+        <h5 style="text-align: center;margin-bottom: 5px;">Leaves History</h5>
         <tr>
             <th>Type</th>
             <th>Start Date</th>
@@ -18,6 +20,7 @@
             <th>Status</th>
             <th>Comments</th>
         </tr>
+        <p *ngIf="tleaves===true" style="text-align: center;">NO LEAVES</p>
         <tr *ngFor="let leave of cleaves">
             <td>{{leave.reason}}</td>
             <td>{{leave.startdate}}</td>

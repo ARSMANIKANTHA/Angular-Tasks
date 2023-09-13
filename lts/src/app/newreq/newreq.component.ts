@@ -40,16 +40,23 @@ export class NewreqComponent implements OnInit {
   }
   cleaves:Leaves[]=[];
   leaveData:any;
+
   accept(val:any)
   {     
-      let res=prompt("Comments:") ;
-      this.leaveData=JSON.parse(this.leaveData);
+      let res=prompt("Comments:");
+      this.leaveData=localStorage.getItem("leaves");
+      if(this.leaveData)
+      {
+        this.leaveData=JSON.parse(this.leaveData);
+        console.log(this.leaveData);
+      }
       this.leaveData.forEach((leave:Leaves)=>{
         if(leave["email"]==val.email)
         {
           leave["status"]="Accepted";
           val.status="Accepted";
-          val.status=res;
+          val.comments=res;
+          leave["comments"]=val.comments;
           this.leaveData=JSON.stringify(this.leaveData);
           localStorage.setItem("leaves",this.leaveData)
         }
@@ -58,19 +65,34 @@ export class NewreqComponent implements OnInit {
   }
   reject(val:any)
   {
-    let res=prompt("Comments:")
-    this.leaveData=JSON.parse(this.leaveData);
-    this.leaveData.forEach((leave:Leaves)=>{
-      if(leave["email"]==val.email)
+    let res1=prompt("Comments:");
+      this.leaveData=localStorage.getItem("leaves");
+      if(this.leaveData)
       {
-        leave["status"]="Rejected";
-        val.status="Rejected";
-        val.comments=res;
-        this.leaveData=JSON.stringify(this.leaveData);
-        localStorage.setItem("leaves",this.leaveData)
+        this.leaveData=JSON.parse(this.leaveData);
+        console.log(this.leaveData);
       }
-    })
-    this.leaveData=JSON.stringify(this.leaveData);
+      this.leaveData.forEach((leave:Leaves)=>{
+        if(leave["email"]==val.email)
+        {
+          leave["status"]="Rejected";
+          val.status="Rejected";
+          val.comments=res1;
+          leave["comments"]=val.comments;
+          this.leaveData=JSON.stringify(this.leaveData);
+          localStorage.setItem("leaves",this.leaveData)
+        }
+      })
+      this.leaveData=JSON.stringify(this.leaveData);
+  }
+  chosenMod:String="";
+  logout()
+  {
+    switch(this.chosenMod)
+    {
+      case "mod2": window.location.href="http://localhost:4200/login";
+                   localStorage.removeItem("currentUser");
+    }
   }
 
 }

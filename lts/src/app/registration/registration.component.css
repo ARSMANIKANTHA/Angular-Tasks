@@ -54,12 +54,6 @@ button{
     align-items: center;
 }
 
-.mainnav{
-    width: auto;
-    height: 30px;
-    margin-bottom: 10px;
-    background-color: rgb(70, 6, 70);
-}
 
 .pat{
     font-size: 15px;
